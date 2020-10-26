@@ -9,7 +9,22 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+  // home page
   router.get("/", (req, res) => {
+    db.query(`SELECT * FROM users;`)
+      .then(data => {
+        const users = data.rows;
+        res.json({ users });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+  // about page
+  router.get("/about", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
