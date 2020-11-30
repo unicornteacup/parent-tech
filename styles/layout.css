@@ -1,0 +1,37 @@
+body {
+  background-color: white;
+}
+
+body h1 {
+  color: #593493;
+  font-family: Varela Round;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+body a.button {
+  padding-top: 21px;
+  padding-right: 34px;
+  padding-bottom: 21px;
+  padding-left: 34px;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  border-bottom-left-radius: 300px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: #fff;
+  background-color: #583493;
+  border-color: #583493;
+}
+/*# sourceMappingURL=layout.css.map */
