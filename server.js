@@ -60,6 +60,11 @@ app.get("/directory", (req, res) => {
   res.render("directory");
 });
 
+app.get("/test", (req, res) => {
+  console.log("getting directory")
+  res.render("arternal");
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
