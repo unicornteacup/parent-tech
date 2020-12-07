@@ -1,11 +1,23 @@
 
 nav .navbar {
+  display: flex;
   flex-direction: row;
 
   div .navbutton{
+    justify-content: flex-end;
     font-family: Varela Round;
     background-color: white;
     color: #583493;
+    border-style: none;
+     a {
+      font-family: Varela Round;
+      text-decoration: none;
+     }
+    }
+
+    img {
+      justify-self: flex-start;
+      background-color: white;
     }
 
 
