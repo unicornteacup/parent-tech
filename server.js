@@ -61,9 +61,9 @@ app.get("/directory", (req, res) => {
   res.render("directory");
 });
 
-app.get("/test", (req, res) => {
-  console.log("getting directory")
-  res.render("arternal");
+app.get("/joinus", (req, res) => {
+  console.log("join us")
+  res.render("joinus");
 });
 
 app.listen(PORT, () => {
