@@ -14,22 +14,22 @@
 
     </p>
   </div>
+
+  <p>
+    Testing display
+  </p>
   <div class='main-grid'>
 
-    <% for (let item in resource) { %>
-    <div class='resources-container'>
-        <div class="resource-image">
-          <a href= <%= resource[item].resource_url %> target="_blank" >
-            <img src=<%= resource[item].resource_image_url %> alt= <%= resource[item].title %> style="width:200px;">
+    <% for (let item in company) { %>
+    <div class='companies-container'>
+        <div class="company-logo">
+          <a href= <%= company[item].company_url %> target="_blank" >
+            <img src=<%= company[item].company_logo_url %> alt= <%= company[item].company_name %> style="width:200px;">
           </a>
         </div>
       <footer>
-        <div class="resource-details">
-          <a href="/resources/<%= resource[item].id %>"" ><%= resource[item].title %></a>
-          <p>Rating: <%= resource[item].rating %></p>
-          <p>Added by: <%= resource[item].username %></p>
-          <div class="post" postid=<%= resource[item].id %> likestatus=<%= resource[item].like %>>
-            <input type="button" class='like' value="Like" /> </input>
+        <div class="company-details">
+          <a href="/companies/<%= company[item].id %>"" ><%= company[item].company_name %></a>
         </div>
       </footer>
     </div>

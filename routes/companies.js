@@ -18,7 +18,9 @@ module.exports = (db) => {
     db.query(`SELECT * FROM companies;`)
       .then(data => {
         const companies = data.rows;
-        res.json({ companies });
+        console.log("companies="+companies)
+        // res.json({ companies });
+        res.render("meetus", companies)
       })
       .catch(err => {
         res

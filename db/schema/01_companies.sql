@@ -8,8 +8,7 @@ CREATE TABLE companies (
   contact_email VARCHAR(255),
   company_url VARCHAR(2048) NOT NULL,
   description TEXT,
-  company_logo_url VARCHAR(2048) NOT NULL,
-  email VARCHAR(255) NOT NULL
+  company_logo_url VARCHAR(2048) NOT NULL
 );
 
 DROP TABLE IF EXISTS categories CASCADE;
