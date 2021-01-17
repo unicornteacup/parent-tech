@@ -12,10 +12,10 @@ CREATE TABLE companies (
 );
 
 DROP TABLE IF EXISTS categories CASCADE;
-CREATE TABLE articles (
+CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  body TEXT
+  description TEXT
 );
 
 DROP TABLE IF EXISTS company_categories CASCADE;
