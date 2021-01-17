@@ -38,7 +38,7 @@ app.use(express.static("public"));
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-// app.use("/users", usersRoutes(db));
+app.use("/companies", companiesRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use( '/public', express.static( 'public' ) );
 // Note: mount other resources here, using the same pattern above
@@ -47,24 +47,29 @@ app.use( '/public', express.static( 'public' ) );
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  res.render("home");
-});
+// app.get("/", (req, res) => {
+//   res.render("home");
+// });
 
-app.get("/about", (req, res) => {
-  console.log("getting about")
-  res.render("about");
-});
+// app.get("/about", (req, res) => {
+//   console.log("getting about")
+//   res.render("about");
+// });
 
-app.get("/directory", (req, res) => {
-  console.log("getting directory")
-  res.render("directory");
-});
+// app.get("/directory", (req, res) => {
+//   console.log("getting directory")
+//   res.render("directory");
+// });
 
-app.get("/joinus", (req, res) => {
-  console.log("join us")
-  res.render("joinus");
-});
+// app.get("/joinus", (req, res) => {
+//   console.log("join us")
+//   res.render("joinus");
+// });
+
+// app.get("/meetus", (req, res) => {
+//   console.log("meet us")
+//   res.render("meetus");
+// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
