@@ -33,12 +33,13 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-// const usersRoutes = require("./routes/users");
+const companiesRoutes = require("./routes/companies");
+const { Template } = require('ejs');
 // const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/companies", companiesRoutes(db));
+// app.use("/companies", companiesRoutes(db));
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use( '/public', express.static( 'public' ) );
 // Note: mount other resources here, using the same pattern above
@@ -47,29 +48,46 @@ app.use( '/public', express.static( 'public' ) );
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-// app.get("/", (req, res) => {
-//   res.render("home");
-// });
+app.get("/", (req, res) => {
+  res.render("home");
+});
 
-// app.get("/about", (req, res) => {
-//   console.log("getting about")
-//   res.render("about");
-// });
+app.get("/about", (req, res) => {
+  console.log("getting about")
+  res.render("about");
+});
 
-// app.get("/directory", (req, res) => {
-//   console.log("getting directory")
-//   res.render("directory");
-// });
+app.get("/directory", (req, res) => {
+  console.log("getting directory")
+  res.render("directory");
+});
 
-// app.get("/joinus", (req, res) => {
-//   console.log("join us")
-//   res.render("joinus");
-// });
+app.get("/joinus", (req, res) => {
+  console.log("join us")
+  res.render("joinus");
+});
 
 // app.get("/meetus", (req, res) => {
 //   console.log("meet us")
 //   res.render("meetus");
 // });
+
+app.get("/meetus", (req, res) => {
+  db.query(`SELECT * FROM companies;`)
+    .then(result => {
+      const templateVars = {
+        company : result.rows
+      }
+      console.log("companies=" + templateVars)
+      // res.json({ companies });
+      res.render("meetus", templateVars)
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -4,20 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet Us</title>
-  <link rel="stylesheet" href="/styles/about.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/meetus.css" type="text/css" />
   <%- include('partials/nav') %>
 </head>
 <body>
-  <h1 class="about">Meet us</h1>
+  <h1 class="title">Meet us</h1>
   <div>
     <p>
-
+      Our directory of ParentTech innovators.
     </p>
   </div>
 
-  <p>
-    Testing display
-  </p>
+
   <div class='main-grid'>
 
     <% for (let item in company) { %>
@@ -29,7 +27,7 @@
         </div>
       <footer>
         <div class="company-details">
-          <a href="/companies/<%= company[item].id %>"" ><%= company[item].company_name %></a>
+          <a href= <%= company[item].company_url %> target="_blank" ><%= company[item].company_name %></a>
         </div>
       </footer>
     </div>
