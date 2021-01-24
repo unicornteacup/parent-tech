@@ -5,11 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nf start",
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js",
-    "build": "bower install && grunt build",
-    "start": "nf start"
+    "build": "bower install && grunt build"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
